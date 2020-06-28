@@ -1,0 +1,9 @@
+<p>Databinding Assignment!</p>
+<input type="text"
+[(ngModel)]="userName">
+<br>
+<p>Username = {{ userName }} with length {{ getUserNameLen() }}</p>
+
+<button class="btn btn-primary"
+[disabled]="isResetDisabled()"
+(click)="resetUser()">Reset</button>

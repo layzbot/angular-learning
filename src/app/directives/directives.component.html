@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <button class="btn btn-primary"
+        (click)="toggleDisplayPara()">Toggle</button>
+    </div>
+    <div class="row">
+        <p [ngStyle]="{'display': displayPara}">Hello World!!</p>
+    </div>
+    <div class="row">
+        <div 
+        *ngFor="let count of counterArr" [ngStyle]="count > 5 ? getStyle() : ''">
+                {{ count }}
+        </div>
+    </div>
+</div>

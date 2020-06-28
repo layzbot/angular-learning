@@ -1,0 +1,18 @@
+
+<div class="container">
+    <div class="row">
+        <input type="text" 
+        name="serverName" 
+        class="form-control"
+        [(ngModel)]="serverName"/>
+    </div>
+    <div class="row">
+        <button class="btn btn-primary" 
+        (click)="onCreateServer()">Add Server</button>
+    </div>
+
+    <div class="row">
+        <p>{{ serverCreationMessage }}</p>
+    </div>
+</div>
+<app-server *ngFor="let server of servers"></app-server>

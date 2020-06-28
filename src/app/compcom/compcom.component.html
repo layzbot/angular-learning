@@ -1,0 +1,9 @@
+
+<p>Comp Com</p>
+<input type="text"
+[(ngModel)]="parentData">
+{{parentData}}
+<p>Child is passing : {{childData}}</p>
+<hr>
+<p>Child Component</p>
+<app-compcomchild (transmittedChildData)="getChildData($event)" [passedParentData] = "parentData"></app-compcomchild>
