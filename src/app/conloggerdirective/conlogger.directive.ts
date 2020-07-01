@@ -1,7 +1,9 @@
 import { Directive, ElementRef, OnInit, HostBinding, HostListener } from '@angular/core';
+import { LoggingService } from '../services/logger.service';
 
 @Directive({
     selector: '[appConsoleLogger]',
+    providers: [LoggingService],
 })
 export class ConsoleLoggerDirective implements OnInit {
 
@@ -12,11 +14,12 @@ export class ConsoleLoggerDirective implements OnInit {
         this.bgColor = 'blue';
     }
 
-    constructor(private elementRef: ElementRef) {
+    constructor(private elementRef: ElementRef,
+                private loggingService: LoggingService) {
     }
 
 
     ngOnInit(): void {
-        console.log(this.elementRef);
+        this.loggingService.logToConsole(this.elementRef);
     }
 }
